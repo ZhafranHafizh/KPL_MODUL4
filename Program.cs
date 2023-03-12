@@ -12,45 +12,45 @@ namespace TPMODUL4_1302210036
             Console.WriteLine("\n");
         }
     }
-}
-
-
-class KodePos
-{
-    Dictionary<string, int> dic_code_daerah = new Dictionary<string, int>()
+    class KodePos
     {
-        {"Batununggal", 40266 },
-        {"Kujangsari", 40287 },
-        {"Mengger", 40267 },
-        {"Wates", 40256 },
-        {"Cijaura", 40287 },
-        {"Jatisari", 40286 },
-        {"Margasari", 40286 },
-        {"Sekajati", 40286 },
-        {"Kebonwaru", 40272 },
-        {"Mleer", 40274 },
-        {"Samoja", 40273 },
-    };
-
-    public void getKodePos(string kode)
-    {
-        if (dic_code_daerah.ContainsKey(kode))
+        Dictionary<string, int> dic_code_daerah = new Dictionary<string, int>()
         {
-            Console.WriteLine(kode + " : " + dic_code_daerah[kode]);
-        }
-        else
-        {
-            Console.WriteLine(kode + "Kode tidak ditemukan");
+            {"Batununggal", 40266 },
+            {"Kujangsari", 40287 },
+            {"Mengger", 40267 },
+            {"Wates", 40256 },
+            {"Cijaura", 40287 },
+            {"Jatisari", 40286 },
+            {"Margasari", 40286 },
+            {"Sekajati", 40286 },
+            {"Kebonwaru", 40272 },
+            {"Mleer", 40274 },
+            {"Samoja", 40273 },
         };
-    }
 
-    public void getAllPosCode()
-    {
-        foreach (KeyValuePair<string, int> i in dic_code_daerah)
+        public void getkodepos(string kode)
         {
-            Console.WriteLine(i.Key + " : " + i.Value);
+            if (dic_code_daerah.ContainsKey(kode))
+            {
+                Console.WriteLine(kode + " : " + dic_code_daerah[kode]);
+            }
+            else
+            {
+                Console.WriteLine(kode + "Kode tidak terdaftar");
+            }
+        }
+        public void getallkodepos()
+        {
+            foreach (KeyValuePair<string, int> i in dic_code_daerah)
+            {
+                Console.WriteLine(i.Key + " : " + i.Value);
+            }
         }
     }
 }
 
 
+
+
+    
