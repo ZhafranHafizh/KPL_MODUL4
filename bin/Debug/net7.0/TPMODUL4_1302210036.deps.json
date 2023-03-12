@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "TPMODUL4_1302210036/1.0.0": {
+        "runtime": {
+          "TPMODUL4_1302210036.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TPMODUL4_1302210036/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
