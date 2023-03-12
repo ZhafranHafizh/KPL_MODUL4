@@ -7,9 +7,14 @@ namespace TPMODUL4_1302210036
         public static void Main(string[] args)
         {
             KodePos TKP = new KodePos();
+            DoorMachine pintu = new DoorMachine();
             Console.WriteLine("Kode Pos semua daerah");
             TKP.getAllPosCode();
             Console.WriteLine("\n");
+
+            Console.WriteLine("Door Status");
+
+            pintu.key();
         }
     }
     class KodePos
@@ -40,12 +45,54 @@ namespace TPMODUL4_1302210036
                 Console.WriteLine(kode + "Kode tidak terdaftar");
             }
         }
-        public void getallkodepos()
+        public void getAllPosCode()
         {
             foreach (KeyValuePair<string, int> i in dic_code_daerah)
             {
                 Console.WriteLine(i.Key + " : " + i.Value);
             }
+        }
+    }
+    class DoorMachine
+    {
+        enum State { Locked, Unlocked, Exit };
+
+        public void key()
+        {
+            State state = State.Locked;
+
+            string[] door_stat = { "Locked", "Unlocked", "Exit Program" };
+            do
+            {
+                Console.WriteLine("Door " + door_stat[(int)state]);
+                Console.WriteLine("1. Buka Pintu");
+                Console.WriteLine("2. Kunci Pintu");
+                Console.WriteLine("3. Keluar");
+                Console.WriteLine("Pilihan: ");
+                string command = Console.ReadLine();
+                switch (state)
+                {
+                    case State.Locked:
+                        if (command == "1")
+                        {
+                            state = State.Unlocked;
+                        }
+                        break;
+                    case State.Unlocked:
+                        if (command == "2")
+                        {
+                            state = State.Locked;
+                        }
+                        break;
+                    case State.Exit:
+                        break;
+                }
+                if (command == "3")
+                {
+                    state = State.Exit;
+                }
+                   
+            } while (state != State.Exit);
         }
     }
 }
